@@ -29,9 +29,9 @@ namespace EventDemo
             person.ChangeNameEvent += Person_ChangeNameEvent;
         }
 
-        private void Person_ChangeNameEvent()
+        private void Person_ChangeNameEvent(object sender, ChangeNameEventArgs args)
         {
-            button1.Content = person.Name;
+            button1.Content = args.name + ", " + args.age;
             Console.WriteLine("事件触发");
         }
 
